@@ -7,16 +7,19 @@ ContactService = function() {
 	var
 	fullContactDatabase,
 	getAll = function() {
-		return getFilteredMatches("");
+		return getFilteredMatches();
 	},
 	getAllMatches = function(searchString) {
-		return getFilteredMatches(searchString);
+		return getFilteredMatches("", searchString);
 	},
-	getFilteredMatches = function(searchString, selectedIds) {
+	getFilteredMatches = function(selectedIds, searchString) {
 		var groupingName,
 		groupingResult,
 		currentEntry,
 		overallResult = [];
+		if(searchString === undefined) {
+			searchString == "";
+		}
 		// 1. Get all matches
 		["contacts", "groups", "smartgroups"].forEach(function(groupingName) {
 			groupingResult = {
