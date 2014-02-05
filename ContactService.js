@@ -13,9 +13,29 @@ ContactService = function() {
 		return getFilteredMatches(searchString);
 	},
 	getFilteredMatches = function(searchString, selectedIds) {
+		var groupingName,
+		groupingResult,
+		currentEntry,
+		overallResult = [];
 		// 1. Get all matches
-
-		// 2. Exclude selectedIds if passed in
+		["contacts", "groups", "smartgroups"].forEach(function(groupingName) {
+			groupingResult = {
+				"displayName" : groupingName,
+				"customCssClass" : groupingName,
+				"members" : []
+			};
+			fullContactDatabase[groupingName].forEach(function(currentEntry) {
+				if(currentEntry.name.toUpperCase().indexOf(searchString.toUpperCase()) !== -1 || currentEntry.metadata.toUpperCase().indexOf(searchString.toUpperCase()) !== -1) {
+					if(!selectedIds || $.inArray(currentEntry.id, selectedIds.split(",")) === -1) {
+						groupingResult.members.push(currentEntry);
+					}
+				}
+			});
+			if(groupingResult.members.length) {
+				overallResult.push(groupingResult);
+			}
+		});
+		return overallResult;
 	};
 
 	// init
