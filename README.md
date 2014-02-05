@@ -1,5 +1,5 @@
-h2.ContactService.js spec v1
-you can assume a contactService variable will be available in the global scope, initialised before your function. It contains the following methods:
+#ContactService.js spec v1
+You can assume a contactService variable will be available in the global scope, initialised before your function. It contains the following methods:
 - getAll() : returns all 'objects'
 - getAllMatches(searchString) : returns all objects that match the searchString
 - getFilteredMatches(searchString, selectedIds) : returns all objects that match the searchString, but excludes any in the selectedIds list
@@ -19,12 +19,12 @@ A directoryObject has:
 - a *metaData* field, which is user-facing information that should be displayed next to the name in the dropdown
 
 Sample request:
-{code}
+```
 contactService.getFilteredMatches("bob", "contact-3", "group-2")
-{code}
+```
 
 Sample response:
-{code}
+```JSON
 [
     {
         "displayName": "Contacts",
@@ -55,7 +55,7 @@ Sample response:
         ]
     }
 ]
-{code}
+```
 
 Assumptions:
 - Empty groupings will not be returned. For example, if the search string only matches one "contact", there will be no grouping object for "Groups"
