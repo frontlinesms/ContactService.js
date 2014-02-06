@@ -20,7 +20,9 @@ ContactService = function() {
 		if(searchString === undefined) {
 			searchString = "";
 		}
-		searchString = searchString.replace(/ /g,'');
+		if(selectedIds) {
+			selectedIds = selectedIds.replace(/ /g,'');
+		}
 		// 1. Get all matches
 		["contacts", "groups", "smartgroups"].forEach(function(groupingName) {
 			groupingResult = {
