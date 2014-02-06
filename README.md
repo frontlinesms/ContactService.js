@@ -2,7 +2,7 @@
 You can assume a contactService variable will be available in the global scope, initialised before your function. It contains the following methods:
 - getAll() : returns all 'objects'
 - getAllMatches(searchString) : returns all objects that match the searchString
-- getFilteredMatches(searchString, selectedIds) : returns all objects that match the searchString, but excludes any in the selectedIds list
+- getFilteredMatches(selectedIds, searchString) : returns all objects that match the searchString, but excludes any in the selectedIds list
 - getFilteredMatches(selectedIds) : returns all objects, but excludes any in the selectedIds list.
 
 All four methods will return a list of 'grouping' objects.

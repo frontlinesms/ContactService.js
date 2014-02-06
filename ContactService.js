@@ -18,7 +18,7 @@ ContactService = function() {
 		currentEntry,
 		overallResult = [];
 		if(searchString === undefined) {
-			searchString == "";
+			searchString = "";
 		}
 		// 1. Get all matches
 		["contacts", "groups", "smartgroups"].forEach(function(groupingName) {
