@@ -14,6 +14,11 @@ ContactService = function() {
 	},
 	getFilteredMatches = function(selectedIds, searchString) {
 		var groupingName,
+		groupingDisplayNames = {
+			"contacts" : "Contacts",
+			"groups" : "Groups",
+			"smartgroups" : "Smart Groups"
+		},
 		groupingResult,
 		currentEntry,
 		overallResult = [];
@@ -26,7 +31,7 @@ ContactService = function() {
 		// 1. Get all matches
 		["contacts", "groups", "smartgroups"].forEach(function(groupingName) {
 			groupingResult = {
-				"displayName" : groupingName,
+				"displayName" : groupingDisplayNames[groupingName],
 				"customCssClass" : groupingName,
 				"members" : []
 			};
@@ -96,6 +101,21 @@ ContactService = function() {
 				"name" : "朴智星",
 				"id" : "contact-10",
 				"metadata" : "+135135135135"
+			},
+			{
+				"name" : "Ali Shaheed Mohammed",
+				"id" : "contact-11",
+				"metadata" : "+133523692082"
+			},
+			{
+				"name" : "James Yancey",
+				"id" : "contact-12",
+				"metadata" : "+139528692082"
+			},
+			{
+				"name" : "Kamaal Ibn John Fareed",
+				"id" : "contact-13",
+				"metadata" : "+1987634253426"
 			}
 		],
 		"groups" : [
@@ -105,8 +125,14 @@ ContactService = function() {
 				"metadata" : "4 members"
 			},
 			{
-				"name" : "Android Owners",
+				"name" : "Windows Users",
 				"id" : "group-2",
+				"metadata" : "0 members",
+				"disabled" : true
+			},
+			{
+				"name" : "Android Owners",
+				"id" : "group-3",
 				"metadata" : "9 members"
 			}
 		],
