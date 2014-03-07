@@ -116,6 +116,21 @@ ContactService = function() {
 				"name" : "Kamaal Ibn John Fareed",
 				"id" : "contact-13",
 				"metadata" : "+1987634253426"
+			},
+			{
+				"name" : "Juman Khamis",
+				"id" : "contact-14",
+				"metadata" : "khamis@united.com"
+			},
+			{
+				"name" : "Mai Zena",
+				"id" : "contact-15",
+				"metadata" : "mai2001@live.com"
+			},
+			{
+				"name" : "Sturridge Mwakule",
+				"id" : "contact-16",
+				"metadata" : "I play for Cheldam"
 			}
 		],
 		"groups" : [
