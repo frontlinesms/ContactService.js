@@ -50057,30 +50057,35 @@ ContactService = function() {
 			{
 				"name" : "Support Staff",
 				"id" : "group-1",
-				"metadata" : "4 members"
+				"metadata" : "4 members",
+				"memberCount" : 4
 			},
 			{
 				"name" : "Windows Users",
 				"id" : "group-2",
 				"metadata" : "0 members",
+				"memberCount" : 0,
 				"disabled" : true
 			},
 			{
 				"name" : "Android Owners",
 				"id" : "group-3",
-				"metadata" : "9 members"
+				"metadata" : "9 members",
+				"memberCount" : 9
 			}
 		],
 		"smartgroups" : [
 			{
 				"name" : "Heores",
 				"id" : "smartgroup-1",
-				"metadata" : "9 members"
+				"metadata" : "9 members",
+				"memberCount" : 9
 			},
 			{
 				"name" : "Villains",
 				"id" : "smartgroup-2",
-				"metadata" : "12 members"
+				"metadata" : "12 members",
+				"memberCount" : 12
 			}
 		]
 	};
