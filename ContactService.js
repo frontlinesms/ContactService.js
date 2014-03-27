@@ -6,6 +6,12 @@ $(function() {
 ContactService = function() {
 	var
 	fullContactDatabase,
+	getObject = function(objectType, index) {
+		return fullContactDatabase[objectType][index];
+	},
+	getObjectCount = function(objectType){
+		return fullContactDatabase[objectType].length;
+	},
 	getAll = function() {
 		return getFilteredMatches();
 	},
@@ -174,4 +180,6 @@ ContactService = function() {
 	this.getAll = getAll;
 	this.getAllMatches = getAllMatches;
 	this.getFilteredMatches = getFilteredMatches;
+	this.getObject = getObject;
+	this.getObjectCount = getObjectCount;
 };
