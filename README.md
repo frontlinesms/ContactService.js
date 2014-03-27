@@ -1,9 +1,13 @@
 #ContactService.js spec v1
 You can assume a contactService variable will be available in the global scope, initialised before your function. It contains the following methods:
-- getAll() : returns all 'objects'
-- getAllMatches(searchString) : returns all objects that match the searchString
-- getFilteredMatches(selectedIds, searchString) : returns all objects that match the searchString, but excludes any in the selectedIds list
-- getFilteredMatches(selectedIds) : returns all objects, but excludes any in the selectedIds list.
+- getAll(onTrigger, onFetch) : fetches all 'objects'
+- getAllMatches(searchString, onTrigger, onFetch) : fetches all objects that match the searchString
+- getFilteredMatches(selectedIds, searchString, onTrigger, onFetch) : fetches all objects that match the searchString, but excludes any in the selectedIds list
+- getFilteredMatches(selectedIds, onTrigger, onFetch) : fetches all objects, but excludes any in the selectedIds list.
+
+Callbacks
+- onTrigger callbacks are called by the *get* methods.
+- onFetch callbacks are called by the *get*  and accept a single parameter, data, which contains the fetched data.
 
 All four methods will return a list of 'grouping' objects.
 
@@ -20,7 +24,15 @@ A directoryObject has:
 
 Sample request:
 ```
-contactService.getFilteredMatches("bob", "contact-3", "group-2")
+onTrigger = function() {
+	showProgressIndicatorOrSomething();
+}
+
+onFetch = function(data) {
+	alert(data);
+}
+
+contactService.getFilteredMatches("bob", "contact-3", "group-2", onTrigger, onFetch);
 ```
 
 Sample response:
