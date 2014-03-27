@@ -7,12 +7,21 @@ ContactService = function() {
 	var
 	fullContactDatabase,
 	getAll = function() {
-		return getFilteredMatches();
+		onTrigger();
+		data = getMatches();
+		onFetch(data);
 	},
-	getAllMatches = function(searchString) {
-		return getFilteredMatches("", searchString);
+	getAllMatches = function(searchString, onTrigger, onFetch) {
+		onTrigger();
+		data = getMatches("", searchString);
+		onFetch(data);
 	},
-	getFilteredMatches = function(selectedIds, searchString) {
+	getFilteredMatches = function(selectedIds, searchString, onTrigger, onFetch) {
+		onTrigger();
+		data = getMatches(selectedIds, searchString);
+		onFetch(data);
+	},
+	getMatches = function(selectedIds, searchString) {
 		var groupingName,
 		groupingDisplayNames = {
 			"contacts" : "Contacts",
