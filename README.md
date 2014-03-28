@@ -4,6 +4,8 @@ You can assume a contactService variable will be available in the global scope, 
 - getAllMatches(searchString) : returns all objects that match the searchString
 - getFilteredMatches(selectedIds, searchString) : returns all objects that match the searchString, but excludes any in the selectedIds list
 - getFilteredMatches(selectedIds) : returns all objects, but excludes any in the selectedIds list.
+- getObject(objectType, index) : returns a single object of type objectType, where objectType is one of "contacts", "smartgroups", or "groups", at the given index in the contactDatabase.
+- getObjectCount(objectType) : returns the number of objects of the given objectType, where objectType is one of "contacts", "smartgroups", or "groups", at the given index in the contactDatabase.
 
 All four methods will return a list of 'grouping' objects.
 
