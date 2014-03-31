@@ -18,6 +18,9 @@ ContactService = function() {
 	getAllMatches = function(searchString) {
 		return getFilteredMatches("", searchString);
 	},
+	getTypes = function() {
+		return [ "contact", "group", "smartgroup" ];
+	},
 	getFilteredMatches = function(selectedIds, searchString) {
 		var groupingName,
 		groupingDisplayNames = {
