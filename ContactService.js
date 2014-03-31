@@ -64,9 +64,7 @@ ContactService = function() {
 					}
 				}
 			});
-			if(groupingResult.members.length) {
-				overallResult[groupingName] = groupingResult;
-			}
+			overallResult[groupingName] = groupingResult;
 		});
 		return overallResult;
 	};
