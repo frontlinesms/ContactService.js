@@ -6,9 +6,6 @@ $(function() {
 ContactService = function() {
 	var
 	fullContactDatabase,
-	getObject = function(objectType, index) {
-		return fullContactDatabase[objectType][index];
-	},
 	getObjectCount = function(objectType){
 		return fullContactDatabase[objectType].length;
 	},
@@ -19,23 +16,23 @@ ContactService = function() {
 		return getFilteredMatches("", searchString);
 	},
 	getTypes = function() {
-		return [ 
-			{
-				"name":"contacts",
-				"displayName" : "Contacts",
-				"customCssClass": "contacts"
-			},
-			{
-				"name":"groups",
-				"displayName" : "Groups",
-				"customCssClass": "groups"
-			},
-			{
-				"name":"smartgroups",
-				"displayName" : "Smart Groups",
-				"customCssClass": "smartgroups"
-			}
-		];
+		return { 
+			"contacts": {
+					"name":"contacts",
+					"displayName" : "Contacts",
+					"customCssClass": "contacts"
+				},
+			"groups": {
+					"name":"groups",
+					"displayName" : "Groups",
+					"customCssClass": "groups"
+				},
+			"smartgroups": {
+					"name":"smartgroups",
+					"displayName" : "Smart Groups",
+					"customCssClass": "smartgroups"
+				}
+		};
 	},
 	getFilteredMatches = function(selectedIds, searchString) {
 		var groupingName,
@@ -46,7 +43,7 @@ ContactService = function() {
 		},
 		groupingResult,
 		currentEntry,
-		overallResult = [];
+		overallResult = {};
 		if(searchString === undefined) {
 			searchString = "";
 		}
@@ -68,7 +65,7 @@ ContactService = function() {
 				}
 			});
 			if(groupingResult.members.length) {
-				overallResult.push(groupingResult);
+				overallResult[groupingName] = groupingResult;
 			}
 		});
 		return overallResult;
@@ -199,7 +196,6 @@ ContactService = function() {
 	this.getAll = getAll;
 	this.getAllMatches = getAllMatches;
 	this.getFilteredMatches = getFilteredMatches;
-	this.getObject = getObject;
 	this.getObjectCount = getObjectCount;
 	this.getTypes = getTypes;
 };
