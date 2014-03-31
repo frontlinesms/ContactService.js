@@ -18,6 +18,25 @@ ContactService = function() {
 	getAllMatches = function(searchString) {
 		return getFilteredMatches("", searchString);
 	},
+	getTypes = function() {
+		return [ 
+			{
+				"name":"contacts",
+				"displayName" : "Contacts",
+				"customCssClass": "contacts"
+			},
+			{
+				"name":"groups",
+				"displayName" : "Groups",
+				"customCssClass": "groups"
+			},
+			{
+				"name":"smartgroups",
+				"displayName" : "Smart Groups",
+				"customCssClass": "smartgroups"
+			}
+		];
+	},
 	getFilteredMatches = function(selectedIds, searchString) {
 		var groupingName,
 		groupingDisplayNames = {
