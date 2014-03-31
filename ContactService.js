@@ -50121,4 +50121,5 @@ ContactService = function() {
 	this.getFilteredMatches = getFilteredMatches;
 	this.getObject = getObject;
 	this.getObjectCount = getObjectCount;
+	this.getTypes = getTypes;
 };
