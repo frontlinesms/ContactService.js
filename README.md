@@ -6,7 +6,7 @@ You can assume a contactService variable will be available in the global scope, 
 - getFilteredMatches(selectedIds) : returns all objects, but excludes any in the selectedIds list.
 - getObject(objectType, index) : returns a single object of type objectType, where objectType is one of "contacts", "smartgroups", or "groups", at the given index in the contactDatabase.
 - getObjectCount(objectType) : returns the number of objects of the given objectType, where objectType is one of "contacts", "smartgroups", or "groups", at the given index in the contactDatabase.
-  getTypes() : returns a list of objects corresponding to the objects available in the fullContactDatabase. An object has a name, customCssClass and displayName.
+- getTypes() : returns a list of objects corresponding to the objects available in the fullContactDatabase. An object has a name, customCssClass and displayName.
 
 The first four methods will return a list of 'grouping' objects.
 
